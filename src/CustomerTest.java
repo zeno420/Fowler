@@ -15,11 +15,15 @@ class CustomerTest {
     @org.junit.jupiter.api.Test
     void statement() {
         c1.addRental(r1);   c1.addRental(r2);
-        assertEquals("Rental Record for joe\n" +
-                        "\tTitle		Days	Amount\n" +
-                        "\tmovie1		10	30.0\n" +
-                        "\tmovie2		5	4.5\n" +
-                        "Amount owed is 34.5\n" +
-                "You earned 3 frequent renter points", c1.statement());
+        try {
+            assertEquals("Rental Record for joe\n" +
+                    "\tTitle		Days	Amount\n" +
+                    "\tmovie1		10	30.0\n" +
+                    "\tmovie2		5	4.5\n" +
+                    "Amount owed is 34.5\n" +
+                    "You earned 3 frequent renter points", c1.statement());
+        } catch (Exception e) {
+            assertTrue(false);
+        }
     }
 }
