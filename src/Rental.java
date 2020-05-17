@@ -12,7 +12,7 @@ class Rental {
         return movie;
     }
 
-    public double amountFor() throws Exception{
+    public double getCharge() throws Exception{
         double result = 0;
         switch (getMovie().getPriceCode()) {
             case Movie.REGULAR:
